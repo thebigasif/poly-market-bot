@@ -1,8 +1,12 @@
+from dataclasses import dataclass, field
+from typing import List, Optional
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
+
+@dataclass
 class Settings:
     polymarket_api_url: str = os.getenv("POLYMARKET_API_URL", "https://clob.polymarket.com")
     polymarket_ws_url: str = os.getenv("POLYMARKET_WS_URL", "wss://ws-subscriptions-clob.polymarket.com/ws/market")
